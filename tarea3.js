@@ -15,30 +15,30 @@ const segundosArray = document.querySelectorAll(".segundos");
 let sumaSegundos = 0;
 
 for (i = 0; i <= 4; i++) {
-  sumaSegundos += Number(segundosArray[i].innerHTML);
+  sumaSegundos += Number(segundosArray[i].textContent);
 }
 
 let sumaMinutos = 0;
 
 for (i = 0; i <= 4; i++) {
-  sumaMinutos += Number(minutosArray[i].innerHTML);
+  sumaMinutos += Number(minutosArray[i].textContent);
 }
 
 let sumaHoras = 0;
 
 for (i = 0; i <= 4; i++) {
-  sumaHoras += Number(horasArray[i].innerHTML);
+  sumaHoras += Number(horasArray[i].textContent);
 }
 
-let segundosTotales = sumaSegundos % 60;
+const segundosTotales = sumaSegundos % 60;
 
-let minutosTotales = (sumaMinutos + Math.floor(sumaSegundos / 60)) % 60;
+const minutosTotales = (sumaMinutos + Math.floor(sumaSegundos / 60)) % 60;
 
-let horasTotales =
+const horasTotales =
   sumaHoras + Math.floor((sumaMinutos + Math.floor(sumaSegundos / 60)) / 60);
 
 document.querySelector("#calcular-duracion-total").onclick = function () {
-  const duracionFinal = `${horasTotales} horas, ${minutosTotales} minutos, ${segundosTotales} segundos.`;
+  const duracionFinal = `Duración total de los videos: ${horasTotales} horas, ${minutosTotales} minutos, ${segundosTotales} segundos.`;
 
-  document.querySelector("#duracion-total").innerHTML = duracionFinal;
+  document.querySelector("#duracion-total").textContent = duracionFinal;
 };

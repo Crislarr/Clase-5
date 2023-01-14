@@ -1,6 +1,3 @@
-//
-//
-
 //TAREA 4: En otro archivo distinto,
 // Crear una lista de <ol> y <li> que contengan sólo números.
 // Convertir esos números a un array y:
@@ -11,7 +8,7 @@
 
 //
 
-const numerosArray = Array.from(document.querySelectorAll("li"));
+const numerosArray = document.querySelectorAll("li");
 
 //
 //
